@@ -1,0 +1,13 @@
+.page {
+	position: relative;
+	width: 330px;
+	height: 200px;
+	display: inline-block;
+
+	line-height: 35px;
+	text-align: center;
+
+	margin: 10px 5px 30px 5px;
+
+	background-size: 330px 200px;
+}
