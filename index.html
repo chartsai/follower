@@ -14,10 +14,18 @@
   <script src="prebuild/react.js"></script>
 
   <link rel="stylesheet" type="text/css" href="css/index.css">
+
+  <script src="prebuild/html2canvas.js"></script>
 </head>
 <body>
   <div id="title"></div>
   <div id="pages"></div>
+
+  <script>
+    html2canvas(document.body).then(function(canvas) {
+      document.body.appendChild(canvas);
+    });
+  </script>
 
   <script src="build/index.js"></script>
 

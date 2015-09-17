@@ -2,6 +2,9 @@
 
   **follower** is a customized home page help you follow the blogs you like!
 
+# dependency
+  * [html2canvas](https://github.com/niklasvh/html2canvas)
+
 # TODO list
   * Change icon.
   * Register Page function(use Mappy extension?), save register pages.
