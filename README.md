@@ -2,6 +2,13 @@
 
   **follower** is a customized home page help you follow the blogs you like!
 
+# Build locally
+Transfer jsx to js locally
+```
+jsx --watch src/ build/
+```
+Drop the follower folder to your chrome://extension page for installing
+
 # dependency
   * [html2canvas](https://github.com/niklasvh/html2canvas)
 
