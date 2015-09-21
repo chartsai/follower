@@ -1,0 +1,18 @@
+body {
+    width: 200px;
+    background-color: rgb(224, 255, 224);
+}
+
+
+#title {
+    text-align: center;
+}
+
+.action {
+    background-color: rgb(128, 128, 255);
+    color: rgb(255,255,255);
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: large;
+}
