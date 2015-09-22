@@ -1,3 +1,5 @@
+var REGISTERED_PAGES = 'registered-pages';
+
 function openFollowerPage() {
     var myid = chrome.runtime.id;
     chrome.tabs.create({url:"index.html"});
@@ -5,32 +7,30 @@ function openFollowerPage() {
 
 
 function registerCurrentPage() {
-  // TODO implement this
   chrome.tabs.query({'active': true}, function(tabs) {
     if (tabs.length == 0) {
         message("There is no page to register");
     }
-
+    // TODO should we check current page?
     var url = tabs[0].url;
-    var uuid = createUUID();
-
-    chrome.storage.sync.set({uuid: url}, function() {
-      chrome.storage.sync.get(uuid, function(urls) {
-        // FIXME the URL is undefined.
-        // Maybe we cannot use UUID to save url?
-        alert(urls[uuid]);
+    alert('has url');
+    chrome.storage.sync.get(REGISTERED_PAGES, function(data) {
+      var pages = data[REGISTERED_PAGES];
+      if (pages == undefined) {
+        pages = [];
+      }
+      pages.push(url);
+      chrome.storage.sync.set({REGISTERED_PAGES: pages}, function() {
+        alert('Stored pages');
       });
     });
   });
 }
 
-function createUUID() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-    return v.toString(16);
-  });
+
+function unregisterCurrentPage() {
+  // TODO implement this.
 }
-// TODO unregisterCurrentPage() and its React class
 
 
 var Home = React.createClass({
